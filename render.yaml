@@ -1,0 +1,13 @@
+# render.yaml
+services:
+  - type: web
+    name: transak-webhook
+    env: node
+    plan: free
+    region: frankfurt  # scegli la regione più vicina
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    autoDeploy: true
+    envVars:
+      - key: TRANSK_API_KEY
+        sync: false   # la inserirai manualmente da dashboard
